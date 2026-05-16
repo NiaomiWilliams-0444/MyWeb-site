@@ -12,76 +12,7 @@
 <link rel="x-icon" type="image/png" href="images/favicon-16x16.png">
 <title> MyWeb-Cloud </title>
 </head> 
-
-<canvas id="petalCanvas"></canvas>
-<script>
-const canvas = document.getElementById('petalCanvas');
-const ctx = canvas.getContext('2d');
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-window.addEventListener('resize', () => {
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-});
-
-const petals = [];
-const PETAL_COUNT = 30;
-const COLORS = ['#e8c8cc', '#C9A84C', '#4A6B52', '#f5ede8', '#d4a0a8'];
-
-function createPetal() {
-return {
-    x: Math.random() * canvas.width,
-    y: -20,
-    size: Math.random() * 10 + 6,
-    color: COLORS[Math.floor(Math.random() * COLORS.length)],
-    speedY: Math.random() * 1.5 + 0.5,
-    speedX: Math.random() * 1 - 0.5,
-    rotation: Math.random() * 360,
-    rotationSpeed: Math.random() * 2 - 1,
-    opacity: Math.random() * 0.5 + 0.5,
-};
-}
-
-for (let i = 0; i < PETAL_COUNT; i++) {
-const p = createPetal();
-p.y = Math.random() * canvas.height; // start scattered
-petals.push(p);
-}
-
-function drawPetal(p) {
-ctx.save();
-ctx.translate(p.x, p.y);
-  ctx.rotate((p.rotation * Math.PI) / 180);
-ctx.globalAlpha = p.opacity;
-ctx.fillStyle = p.color;
-ctx.beginPath();
-  ctx.ellipse(0, 0, p.size, p.size / 2, 0, 0, Math.PI * 2);
-ctx.fill();
-ctx.restore();
-}
-
-function animate() {
-ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-petals.forEach((p, i) => {
-    p.y += p.speedY;
-    p.x += Math.sin(p.y / 50) * 0.8 + p.speedX; // gentle sway
-    p.rotation += p.rotationSpeed;
-
-    if (p.y > canvas.height + 20) {
-      petals[i] = createPetal(); // reset when off screen
-    }
-
-    drawPetal(p);
-});
-
-requestAnimationFrame(animate);
-}
-
-animate();
-</script>
+<body>
     
 <header>
 
@@ -179,13 +110,6 @@ animate();
 </a>
 </div>
 
-<div class="decorative-circles">
-<span class="circle green"></span>
-<span class="circle yellow"></span>
-<span class="circle green"></span>
-<span class="circle yellow"></span>
-</div>
-
         </div> 
         <div id="box5">
 <h3 class="form-title">Send Me a Message</h3>
@@ -215,6 +139,75 @@ animate();
 <p id = "footertext"> &copy; 2026 Niaomi Ivy <br> All rights reserved.</p>
 </footer>
 
+<canvas id="petalCanvas"></canvas>
+<script>
+const canvas = document.getElementById('petalCanvas');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+window.addEventListener('resize', () => {
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+});
+
+const petals = [];
+const PETAL_COUNT = 30;
+const COLORS = ['#e8c8cc', '#C9A84C', '#4A6B52', '#f5ede8', '#d4a0a8'];
+
+function createPetal() {
+return {
+    x: Math.random() * canvas.width,
+    y: -20,
+    size: Math.random() * 10 + 6,
+    color: COLORS[Math.floor(Math.random() * COLORS.length)],
+    speedY: Math.random() * 1.5 + 0.5,
+    speedX: Math.random() * 1 - 0.5,
+    rotation: Math.random() * 360,
+    rotationSpeed: Math.random() * 2 - 1,
+    opacity: Math.random() * 0.5 + 0.5,
+};
+}
+
+for (let i = 0; i < PETAL_COUNT; i++) {
+const p = createPetal();
+p.y = Math.random() * canvas.height; // start scattered
+petals.push(p);
+}
+
+function drawPetal(p) {
+ctx.save();
+ctx.translate(p.x, p.y);
+  ctx.rotate((p.rotation * Math.PI) / 180);
+ctx.globalAlpha = p.opacity;
+ctx.fillStyle = p.color;
+ctx.beginPath();
+  ctx.ellipse(0, 0, p.size, p.size / 2, 0, 0, Math.PI * 2);
+ctx.fill();
+ctx.restore();
+}
+
+function animate() {
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+petals.forEach((p, i) => {
+    p.y += p.speedY;
+    p.x += Math.sin(p.y / 50) * 0.8 + p.speedX; // gentle sway
+    p.rotation += p.rotationSpeed;
+
+    if (p.y > canvas.height + 20) {
+      petals[i] = createPetal(); // reset when off screen
+    }
+
+    drawPetal(p);
+});
+
+requestAnimationFrame(animate);
+}
+
+animate();
+</script>
 
 </body>
     </html>

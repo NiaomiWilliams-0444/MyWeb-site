@@ -280,6 +280,7 @@ background-image:url(images/box3.jpg) ;
 background-size: cover;
 background-position: center;
 position: relative;
+
 }
 
 #box1::before, #box2::before, #box3::before {
@@ -308,13 +309,13 @@ background-color: #2C3B2E;
 box-shadow: #1c251e 3px 3px 2px;
 z-index: 2;
 position: relative;
-left: -140px;
+left: -340px;
 padding: 5px 30px;
-top: 200px;
+top: 100px;
 display: flex;
 flex-direction: column;
 justify-content: center;
-gap: 40px;
+gap: 30px;
 }
 
 
@@ -327,7 +328,7 @@ z-index: 1;
 position: relative;
 margin-top: 60px;
 top: -200px;
-left: 300px;
+left: 400px;
 }
 
 .contact-icon {
@@ -363,30 +364,6 @@ letter-spacing: 0.13em;
 text-transform: uppercase;
 color: #bd687b;
 }
-.decorative-circles {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 30px;
-padding: 40px;
-}
-
-
-.circle {
-width: 40x;
-height: 40px;
-border-radius: 50%;
-}
-
-.circle.green {
-background-color: #4A6B52; 
-}
-
-.circle.yellow {
-background-color: #E8C84A; 
-}
-
-
 
 .icon-label a:hover {
 
@@ -399,7 +376,7 @@ text-shadow: #bd687b 2px 1px 1px;
 font-family: "monsieur la doulaise", "arial" ,cursive;
 position: relative;
 top: 80px;
-right: -210px;
+right: -50px;
 z-index: 5;
 }
 .form-title {
@@ -505,7 +482,7 @@ color: #2E4A3A;
 
 .aboutme {
 color: #1c251e;
-margin-left: 650px;
+margin-left: 675px;
 text-shadow: #b8c9b0 2px 1px 1px;
 }
 
@@ -513,13 +490,13 @@ text-shadow: #b8c9b0 2px 1px 1px;
 
 .Work-experience {
 color: #1c251e;
-margin-left: 650px;
+margin-left: 675px;
 text-shadow: #b8c9b0 2px 1px 1px;
 }
 
 .certifications {
 color: #1c251e;
-margin-left: 650px;
+margin-left: 675px;
 text-shadow: #b8c9b0 2px 1px 1px;
 }
 

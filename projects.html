@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<link rel="stylesheet" href = "style.css"> 
+<link rel="x-icon" type="image/png" href="images/favicon-16x16.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Fleur+De+Leah&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Fleur+De+Leah&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+<link rel="x-icon" type="image/png" href="images/favicon-16x16.png">
+</head>
+<canvas id="petalCanvas"></canvas>
+<script>
+const canvas = document.getElementById('petalCanvas');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+window.addEventListener('resize', () => {
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+});
+
+const petals = [];
+const PETAL_COUNT = 30;
+const COLORS = ['#e8c8cc', '#C9A84C', '#4A6B52', '#f5ede8', '#d4a0a8'];
+
+function createPetal() {
+return {
+    x: Math.random() * canvas.width,
+    y: -20,
+    size: Math.random() * 10 + 6,
+    color: COLORS[Math.floor(Math.random() * COLORS.length)],
+    speedY: Math.random() * 1.5 + 0.5,
+    speedX: Math.random() * 1 - 0.5,
+    rotation: Math.random() * 360,
+    rotationSpeed: Math.random() * 2 - 1,
+    opacity: Math.random() * 0.5 + 0.5,
+};
+}
+
+for (let i = 0; i < PETAL_COUNT; i++) {
+const p = createPetal();
+p.y = Math.random() * canvas.height; // start scattered
+petals.push(p);
+}
+
+function drawPetal(p) {
+ctx.save();
+ctx.translate(p.x, p.y);
+  ctx.rotate((p.rotation * Math.PI) / 180);
+ctx.globalAlpha = p.opacity;
+ctx.fillStyle = p.color;
+ctx.beginPath();
+  ctx.ellipse(0, 0, p.size, p.size / 2, 0, 0, Math.PI * 2);
+ctx.fill();
+ctx.restore();
+}
+
+function animate() {
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+petals.forEach((p, i) => {
+    p.y += p.speedY;
+    p.x += Math.sin(p.y / 50) * 0.8 + p.speedX; // gentle sway
+    p.rotation += p.rotationSpeed;
+
+    if (p.y > canvas.height + 20) {
+      petals[i] = createPetal(); // reset when off screen
+    }
+
+    drawPetal(p);
+});
+
+requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+<body> 
+    <nav class="main-nav">
+<div class="nav-left">
+        <img src = "images/favicon-32x32.png" alt = "NW" class="logoleft">
+    <span class="nav-logo">NiaomiWeb</span>
+</div>
+<img src = "images/nw clear.png" alt = "NW" class = "nav-logo-img">
+
+<div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html">MyProjects</a>
+    <a href="resume.html">MyResume</a>
+</div>
+</nav>
+    <title> MyTech-projects </title>
+
+<div class="marquee">
+<span class="marquee-inner">
+    | Welcome to My Projects Page | Where magic happens |
+</span>
+</div>
+
+
+
+<div class="projects-grid">
+
+<a href="#" class="project-card">
+    <h3>MyWeb-Cloud</h3>
+    <p>Personal portfolio site built with HTML, CSS & a little JavaScript</p>
+    <span class="tag">HTML · CSS</span>
+</a>
+
+<a href="#" class="project-card">
+    <h3>Project 2</h3>
+    <p>Coming soon...</p>
+    <span class="tag">In Progress</span>
+</a>
+<a href="#" class="project-card">
+    <h3>Project 3</h3>
+    <p>Coming soon...</p>
+    <span class="tag">In Progress</span>
+</a>
+
+<a href="#" class="project-card">
+    <h3>Project 4</h3>
+    <p>Coming soon...</p>
+    <span class="tag">In Progress</span>
+</a>
+
+<a href="#" class="project-card">
+    <h3>Project 5</h3>
+    <p>Coming soon...</p>
+    <span class="tag">In Progress</span>
+</a>
+
+<a href="#" class="project-card">
+    <h3>Project 6</h3>
+    <p>Coming soon...</p>
+    <span class="tag">In Progress</span>
+</a>
+
+
+</div>
+
+
+<div class="extras-scroll">
+<a href="#" class="project-card-sm">Extra Project 1</a>
+<a href="#" class="project-card-sm">Extra Project 2</a>
+<a href="#" class="project-card-sm">Extra Project 3</a>
+<a href="#" class="project-card-sm">Extra Project 4</a>
+<a href="#" class="project-card-sm">Extra Project 5</a>
+<a href="#" class="project-card-sm">Extra Project 6</a>
+</div>
+
+
+<div class="marquee">
+<span class="marquee-inner">
+    | Welcome to My Projects Page | Where magic happens |
+</span>
+</div>
+    <footer>
+    <hr id = "footerline">
+<p id = "footertext"> &copy; 2026 Niaomi Ivy <br> All rights reserved.</p>
+</footer>
+</body>
+</html>

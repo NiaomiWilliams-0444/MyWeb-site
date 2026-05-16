@@ -1,0 +1,195 @@
+<!DOCTYPE html> <html> 
+
+<head>
+
+    <link rel="stylesheet" href = "style.css"> 
+    <link rel="x-icon" type="image/png" href="images/favicon-16x16.png">
+    <title> Myresume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Fleur+De+Leah&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Fleur+De+Leah&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+<link rel="x-icon" type="image/png" href="images/favicon-16x16.png">
+
+</head>
+<canvas id="petalCanvas"></canvas>
+<script>
+const canvas = document.getElementById('petalCanvas');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+window.addEventListener('resize', () => {
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+});
+
+const petals = [];
+const PETAL_COUNT = 5;
+const COLORS = ['#e8c8cc', '#C9A84C', '#4A6B52', '#f5ede8', '#d4a0a8'];
+
+function createPetal() {
+return {
+    x: Math.random() * canvas.width,
+    y: -20,
+    size: Math.random() * 10 + 6,
+    color: COLORS[Math.floor(Math.random() * COLORS.length)],
+    speedY: Math.random() * 1.5 + 0.5,
+    speedX: Math.random() * 1 - 0.5,
+    rotation: Math.random() * 360,
+    rotationSpeed: Math.random() * 2 - 1,
+    opacity: Math.random() * 0.5 + 0.5,
+};
+}
+
+for (let i = 0; i < PETAL_COUNT; i++) {
+const p = createPetal();
+p.y = Math.random() * canvas.height; // start scattered
+petals.push(p);
+}
+
+function drawPetal(p) {
+ctx.save();
+ctx.translate(p.x, p.y);
+  ctx.rotate((p.rotation * Math.PI) / 180);
+ctx.globalAlpha = p.opacity;
+ctx.fillStyle = p.color;
+ctx.beginPath();
+  ctx.ellipse(0, 0, p.size, p.size / 2, 0, 0, Math.PI * 2);
+ctx.fill();
+ctx.restore();
+}
+
+function animate() {
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+petals.forEach((p, i) => {
+    p.y += p.speedY;
+    p.x += Math.sin(p.y / 50) * 0.8 + p.speedX; // gentle sway
+    p.rotation += p.rotationSpeed;
+
+    if (p.y > canvas.height + 20) {
+      petals[i] = createPetal(); // reset when off screen
+    }
+
+    drawPetal(p);
+});
+
+requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+<body>
+
+    <header>
+
+    <nav class="main-nav">
+<div class="nav-left">
+        <img src = "images/favicon-32x32.png" alt = "NW" class="logoleft">
+    <span class="nav-logo">NiaomiWeb</span>
+</div>
+<img src = "images/nw clear.png" alt = "NW" class = "nav-logo-img">
+
+<div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html">MyProjects</a>
+    <a href="resume.html">MyResume</a>
+</div>
+</nav>
+
+
+<div class ="pagetitle">
+<h1> My Resume</h1>
+</div>
+
+<div class=" BOX1" >
+<h2 id = "resumename">  Niaomi Williams</h2>
+    <h3 id = "resumerole"> Aspiring Cloud Specialist</h3> 
+<hr id="resumedivider1">
+
+<h3 id = "Header-Resume"> 📞 | My-Contact</h3>
+    <div class="contact-item">
+        <span class="label">MyPhone-number:</span>
+        <span>908-440-5926</span>
+    </div>
+    <div class="contact-item">
+        <span class="label">MyEmail:</span>
+        <a href="mailto:naomipersonally@gmail.com">naomipersonally@gmail.com</a>
+    </div>
+    <div class="contact-item">
+        <span class="label">MyLinkedIn:</span>
+        <a href="https://www.linkedin.com/in/niaomi-williams-51570637b/" target="_blank">linkedin.com/in/niaomi-williams</a>
+    </div>
+    <div class="contact-item">
+        <span class="label">MyGitHub:</span>
+        <a href="https://github.com/NiaomiWilliams-0444" target="_blank">NiaomiWilliams-0444</a>
+    </div>
+    <div class="contact-item">
+        <span class="label">MyHandshake:</span>
+        <a href="https://montclair.joinhandshake.com/profiles/nw0444" target="_blank">montclair.joinhandshake.com/profiles/nw0444-0444</a>
+    </div>
+
+    <div class = "HeaderResume">
+<h3 id = "techskillsheader"5> 💻 | Tech-Skills</h3>
+<p> Core Skills: HTML &amp CSS, JavaScript, and Python </p>
+<p> Soft skills: Microsoft Office, Continuous Learning, Collaboration, Communication, Adaptabilit, Problem-solving, Analytical-thinking, Risk Managment, Attention-to-detail</p>
+    </div>
+
+    <div class="HeaderResume">
+    <h3 id = "educationheader"> 📖 | Education</h3>
+    <h4> Montclair State University </h4>
+    <span class = "fieldofstudy"> Field of study - Information Technology </span>
+    <p class = grad-date> Aug 2024 - May 2028 (current) </p>
+</div>
+    </div>
+
+    
+<div class= "BOX2">
+<div class = "aboutme" > 
+<h2 id = "aboutmeheader">About me</h2>
+<P>Hello! My name is Niaomi Williams and I am studying to specialize in being a Cloud Security Specialist. I am a passionate learner seeking to leverage strong analytical skills as a entry level. I currertly in pursuit of my Bachelor's Degree in Informatiom Technology at Montclair State University. Problem-solving, analytical-thinking, and attention-to-detail, demonstrated through hands-on projects.</P>
+</div>
+
+<div class = "Work-experience"> 
+<h3 id = "workexperienceheader"> Work Experience</h3>
+<h4> Jedi Security LLC | Somerset, NJ</h4>
+<h5>March 2024 - present</h5>
+<ul> 
+<li>Assist with security analysis trouble-shooting supporting cybersecurity awareness and internal
+security initiatives.</li>
+<li>Conducts research on cybersecurity threats and document findings for internal review.</li>
+<li>Observes and participates in technical discussions and project reviews led by senior
+security engineers.</li>
+</ul>
+
+<h4> Marshalls | Elizabeth, NJ</h4>
+<h5>October 2023 - april 2024</h5>
+<ul> 
+<li> Delivered customer retail support in a high-volume and high-stress environment</li>
+<li> Resolved customer issues and assisted with product inquiries.</li>
+<li> Maintained strong communication and problem-solving skills under pressure.</li>
+</ul>
+</div>
+<div class = "certifications" >
+<!--Aws Certified Cloud Practitioner-->
+<!--CompTia A+-->
+<!--CompTia Network+-->
+<!--CompTia Security+-->
+<!--CompTia Linux+-->
+<h4 >Certifications</h4>
+    <p> CompTia A+ (in progress)</p>
+    <p> CompTia network+ (in progress)</p>
+    <p> CompTia Security+ (in progress)</p>
+    </div>
+</div>
+<footer>
+    <hr id = "footerline">
+<p id = "footertext"> &copy; 2026 Niaomi Ivy <br> All rights reserved.</p>
+</footer>
+</body>
+</html>

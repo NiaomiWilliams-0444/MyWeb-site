@@ -1,0 +1,220 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Fleur+De+Leah&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Fleur+De+Leah&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+<link rel="x-icon" type="image/png" href="images/favicon-16x16.png">
+<title> MyWeb-Cloud </title>
+</head> 
+
+<canvas id="petalCanvas"></canvas>
+<script>
+const canvas = document.getElementById('petalCanvas');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+window.addEventListener('resize', () => {
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+});
+
+const petals = [];
+const PETAL_COUNT = 30;
+const COLORS = ['#e8c8cc', '#C9A84C', '#4A6B52', '#f5ede8', '#d4a0a8'];
+
+function createPetal() {
+return {
+    x: Math.random() * canvas.width,
+    y: -20,
+    size: Math.random() * 10 + 6,
+    color: COLORS[Math.floor(Math.random() * COLORS.length)],
+    speedY: Math.random() * 1.5 + 0.5,
+    speedX: Math.random() * 1 - 0.5,
+    rotation: Math.random() * 360,
+    rotationSpeed: Math.random() * 2 - 1,
+    opacity: Math.random() * 0.5 + 0.5,
+};
+}
+
+for (let i = 0; i < PETAL_COUNT; i++) {
+const p = createPetal();
+p.y = Math.random() * canvas.height; // start scattered
+petals.push(p);
+}
+
+function drawPetal(p) {
+ctx.save();
+ctx.translate(p.x, p.y);
+  ctx.rotate((p.rotation * Math.PI) / 180);
+ctx.globalAlpha = p.opacity;
+ctx.fillStyle = p.color;
+ctx.beginPath();
+  ctx.ellipse(0, 0, p.size, p.size / 2, 0, 0, Math.PI * 2);
+ctx.fill();
+ctx.restore();
+}
+
+function animate() {
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+petals.forEach((p, i) => {
+    p.y += p.speedY;
+    p.x += Math.sin(p.y / 50) * 0.8 + p.speedX; // gentle sway
+    p.rotation += p.rotationSpeed;
+
+    if (p.y > canvas.height + 20) {
+      petals[i] = createPetal(); // reset when off screen
+    }
+
+    drawPetal(p);
+});
+
+requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+    
+<header>
+
+    <nav class="main-nav">
+<div class="nav-left">
+        <img src = "images/favicon-32x32.png" alt = "NW" class="logoleft">
+    <span class="nav-logo">NiaomiWeb</span>
+</div>
+<img src = "images/nw clear.png" alt = "NW" class = "nav-logo-img">
+
+<div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html">MyProjects</a>
+    <a href="resume.html">MyResume</a>
+</div>
+</nav>
+
+    <hr>
+</header>
+        
+        <div>
+<div class ="main-content">
+    <img id = "main-image" src = "images/7F699BEE-48E7-4A1E-9FBF-0DAAF4B3BF73.jpeg" alt = "MyGarden">
+</div>
+    <hr>
+<!-- main text -->
+    <div class = "maintext">
+        <h1 id="welcometo"> Welcome to </h1>
+        <h1 id="mygarden"> MyGarden </h1>
+        <h4 id = "subtitle"> my personal garden, growing with love</h4>
+    </div>
+
+<section class="intro-strip">
+<p>· cloud · security · Design · intention ·</p>
+</section>
+
+
+
+
+    <!--video layer 1st-->
+<div class = "about-section"> 
+
+<video autoplay muted loop playsinline class = "about-bg-video">
+    <source src = "videos/b.mp4" type = "video/mp4" >
+</video>
+<!-- text layer-->
+<div class = "aboutcontent"> 
+    <h3 id = "aboutheader" > ABOUT MYWEB-SITE </h3>
+    </div>
+</div> 
+
+
+
+    <div class = "boxes">
+        <div id = "box1" > 
+<p id ="about1"> This project started as a learning exercise and quickly became something more personal - my subtle protest against the idea that working in tech means leaving your personality at the door.</p> </div>
+        <div id = "box2"> 
+<p id="about2">Built from scratch in HTML, CSS, and JavaScript, this portfolio is where my cloud security skills, projects, and overall journey will reside, alongside the attention to detail and color I've always carried. </p> </div>
+        <div id = "box3"> 
+<p id = "about3">Tech doesn't have to be dull or monotonous, because behind every infrastructure, every system, every project, there is a creative human mind that is anything but boring. The design is not just decorative, but also my testament that technical ability and style are not antonyms. </p></div>
+    </div>
+        </div>
+    
+        <div class = "contact-section" > 
+        <h3 id = "contactheader" > Contact Me At</h3>
+
+        <div id="box4">
+<a href="https://github.com/NiaomiWilliams-0444" class="contact-icon">
+    <div class="icon-circle"></div>
+    <img src="images/github.svg" alt="Github" class="social-icon">
+    <span class="icon-label">Github/NiaomiWilliams-0444</span>
+</a>
+
+<a href="https://profile.indeed.com/?hl=en_US&co=US&from=gnav-homepage" class="contact-icon">
+    <div class="icon-circle"></div>
+    <img src="images/indeed.svg" alt="Indeed" class="social-icon-indeed">
+    <span class="icon-label"> Indeed/NiaomiWilliams</span>
+</a>
+
+<a href="mailto:Naomipersonally@gmail.com" class="contact-icon">
+    <div class="icon-circle"></div>
+    <img src="images/gmail.svg" alt="Gmail" class="social-icon">
+    <span class="icon-label">Naomipersonally@gmail.com</span>
+</a>
+
+<a href="https://www.linkedin.com/in/niaomi-williams-51570637b/" class="contact-icon">
+    <div class="icon-circle"></div>
+    <img src="images/linkedin.svg" alt="Linkedin" class="social-icon">
+    <span class="icon-label">Linkedin/NiaomiWilliams</span>
+</a>
+<a href="https://montclair.joinhandshake.com/profiles/nw0444" class="contact-icon">
+    <div class="icon-circle"></div>
+    <img src="images/Handshake.svg" alt="Handshake" class="socialH-icon">
+    <span class="icon-label">Handshake/NiaomiWilliams</span>
+</a>
+</div>
+
+<div class="decorative-circles">
+<span class="circle green"></span>
+<span class="circle yellow"></span>
+<span class="circle green"></span>
+<span class="circle yellow"></span>
+</div>
+
+        </div> 
+        <div id="box5">
+<h3 class="form-title">Send Me a Message</h3>
+
+<form action="mailto:Naomipersonally@gmail.com" method="post" enctype="text/plain">
+    
+    <div class="form-group">
+    <input type="text" placeholder="Your Name" class="form-input">
+    </div>
+
+    <div class="form-group">
+    <input type="email" placeholder="Your Email" class="form-input">
+    </div>
+
+    <div class="form-group">
+    <textarea placeholder="Your Message" class="form-input form-textarea"></textarea>
+    </div>
+
+    <button type="submit" class="form-btn">Send</button>
+
+</form>
+</div>
+
+
+<footer>
+    <hr id = "footerline">
+<p id = "footertext"> &copy; 2026 Niaomi Ivy <br> All rights reserved.</p>
+</footer>
+
+
+</body>
+    </html>

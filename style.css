@@ -1,0 +1,710 @@
+body { 
+    background-color: #F2D4DC; 
+
+}
+.main-nav { 
+            border: 2px double #c9879a;
+            justify-content: space-between;
+            color : #2C3B2E;
+            align-items: center;
+            font-size : 15px;
+            display: flex;
+            padding:  10px 40px;
+            height: 90px;
+            letter-spacing: 1px;
+}
+
+
+hr { border: 1px solid #4A6B52;
+    width: 100%;
+    position: relative;
+}
+.nav-left {
+            background-color: #E8A8B8;
+            color: #2C3B2E;
+            height : 60px ;
+            justify-content: space-between;
+            align-items: center;
+            display: flex;
+            padding : 10px 20px;
+            font-family: "monsieur la doulaise","arial" ,cursive; 
+            font-size : 30px;
+
+}
+.logoleft {
+margin-right: 12px;
+}
+
+.nav-logo-img { 
+height: 130px;
+
+
+
+width: auto;
+opacity: 1.0;
+mix-blend-mode: multiply;
+
+
+}
+.nav-links { display: flex;
+    background-color: #D4748A;
+            padding: 10px 20px;
+            color: #2C3B2E;
+            font-size : 20px;
+            align-items: center;
+            justify-content: space-between;
+                gap: 30px;
+                height : 60px;
+}
+
+.nav-links a {
+            color: #2C3B2E;
+            font-size: 20px;
+            letter-spacing: 1px;
+            justify-content: space-between;
+            text-align: center;
+            text-decoration: none;
+            gap: 25px;
+}
+a:hover { 
+color:#b8c9b0;
+}
+
+a:active { 
+    color:#E8C84A
+}
+
+
+
+
+#main-image {
+width: 100%;
+height: 555px;
+object-fit: cover;
+display: block;
+border: #4A6B52 solid 2px;
+}
+
+.main-content {
+    position: relative;
+    width: 100%; 
+    height: 600px;
+    overflow: hidden;
+}
+
+#welcometo {
+    position: absolute;
+    font-size: 60px;
+    top: 225px;
+    bottom: 50px;
+    left: 180px;
+    color: #b8c9b0;
+    text-shadow:#4A6B52 1px 1px 1px;
+    font-family : "monsieur la doulaise", "arial" ,cursive;
+    font-size : 60px;
+}
+
+#mygarden {
+    position: absolute;
+    top: 450px ;
+    bottom: 60px;
+    right: 100px;
+    color: #b8c9b0;
+    text-shadow:#4A6B52 1px 1px 1px;
+    font-family : "monsieur la doulaise", "arial" ,cursive;
+    font-size : 60px;
+    
+}
+
+#subtitle {  color: #F2D4DC;; font-family:"arial";
+    text-shadow: #e99eb3b9 1px 1px 1px;
+        font-size : 13px;
+        position: absolute;
+        right: 60px;
+        top: 200px;
+        left: 800px;
+        bottom: 20px;
+        letter-spacing: 0.1;
+        }
+
+.intro-strip {
+background: #2E4A3A;
+color: #F2D4DC ;
+text-align: center;
+padding: 24px 40px;
+font-family: "Inria Serif", serif;
+font-size: 14px;
+letter-spacing: 0.3em;
+text-transform: uppercase;
+}
+
+footer {
+justify-content: space-between;
+align-items: center;
+padding: 10px 40px;
+border : 2px solid #c9879a;
+}
+
+#footertext { border: 2px solid #4A6B52;
+            border-bottom: 2px solid #4A6B52;
+            text-align: center;
+            padding : 10px;
+            color: #E8C84A;
+            text-shadow: #4A6B52 2px 1px 1px;
+}
+
+.aboutcontent {
+position : absolute;
+bottom: -240px; 
+left: 0;
+left: 0;
+font-family: "moniseur la doulaise", cursive; 
+display: flex;
+align-items: center;
+z-index: 10;
+font-size: 80px;
+justify-content: center;
+flex-direction: column;
+height: 100%;
+padding: 30px; 
+}
+
+
+.about-section::before {
+content: "";
+position: absolute;
+top: 0%;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(28, 43, 36, 0.605);
+z-index: 1;
+overflow: hidden;
+}
+
+#aboutheader {
+    font-family: "moniseur la doulaise", cursive; 
+    margin: 0;
+    right: 40px;
+    top: 45px;
+    bottom: -40px;
+    left: 60px;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    text-shadow: #2C3B2E 2px 5px 2px;
+    color: #b8c9b0;
+    white-space: nowrap
+}
+#about1, #about2, #about3 {
+    color: #b8c9b0;
+    font-family: "inria serif", serif;
+    font-size: 18px;
+    position: relative;
+    margin-right: 20px;
+}
+.about-section {
+position: relative;
+align-items: center;
+width: 100%;
+height: 500px;
+padding: 0;
+
+}
+
+.about-bg-video {
+    object-fit: cover;
+    position: absolute;
+    object-position: bottom center 80%;
+    box-shadow: #c9879a;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events:none;
+
+}
+
+
+
+.boxes {
+
+    display: flex;
+    gap: 40px;
+    padding: 20px 80px;
+    justify-content: center;
+    box-sizing: border-box;
+}
+#box1 {  
+
+flex: 1;
+width: 2000px;
+min-height: 300px;
+box-shadow: 2px 7px 3px rgba(180, 80, 110, 0.5);
+border-radius: 4px;
+padding: 24px;
+overflow: hidden;
+box-sizing: border-box;
+background-image: url(images/box1.jpg);
+background-size: cover;
+background-position: center;
+position : relative;
+}
+
+#box2 { 
+    flex: 1;
+    width: 2000px;
+    min-height: 300px;
+    box-shadow: 2px 8px 4px rgba(180, 80, 110, 0.5);
+    padding: 24px;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-image:url(images/box2.jpg); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+
+
+#box3 { 
+flex: 1;
+width: 2000px;
+min-height: 300px;
+box-shadow: 2px 8px 4px rgba(180, 80, 110, 0.5);
+padding: 24px;
+overflow: hidden;
+box-sizing: border-box;
+background-image:url(images/box3.jpg) ;
+background-size: cover;
+background-position: center;
+position: relative;
+}
+
+#box1::before, #box2::before, #box3::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(28, 43, 36, 0.605);
+z-index: 0;
+}
+
+.contact-section {
+margin: 50px;
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+position: relative;
+}
+
+#box4 {
+height: 400px;
+width: 330px;
+background-color: #2C3B2E;
+box-shadow: #1c251e 3px 3px 2px;
+z-index: 2;
+position: relative;
+left: -185px;
+padding: 5px 30px;
+top: 200px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+gap: 40px;
+}
+
+
+#box5 {
+height: 480px;
+width: 600px;
+background-color: #c9879a;
+box-shadow: #9e6877 3px 3px 4px;
+z-index: 1;
+position: relative;
+margin-top: 60px;
+top: -200px;
+left: 500px;
+}
+
+.contact-icon {
+display: flex;
+flex-direction: row;
+align-items: center;
+gap: 12px;
+text-decoration: none;
+padding: -7px ;
+width: 100%;
+}
+
+.icon-circle {
+width: 12px;
+height: 12px;
+font-family: ina,;
+border-radius: 50%;
+background-color: #E8C84A;
+box-shadow: #bd687b 3px 2px 1px;
+flex-shrink: 0;
+}
+
+.social-icon, .social-icon-indeed {
+height: 40px;
+width: 40px;
+display: block;
+filter: invert(78%) sepia(55%) saturate(400%) hue-rotate(5deg) brightness(95%);
+}
+
+.icon-label {
+font-size: 14px;
+letter-spacing: 0.13em;
+text-transform: uppercase;
+color: #bd687b;
+}
+.decorative-circles {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 30px;
+padding: 40px;
+}
+
+
+.circle {
+width: 40x;
+height: 40px;
+border-radius: 50%;
+}
+
+.circle.green {
+background-color: #4A6B52; 
+}
+
+.circle.yellow {
+background-color: #E8C84A; 
+}
+
+
+
+.icon-label a:hover {
+
+    color: #b8c9b0;
+}
+#contactheader {
+    font-size: 60px;
+color: #E8C84A;
+text-shadow: #bd687b 2px 1px 1px;
+font-family: "monsieur la doulaise", "arial" ,cursive;
+position: relative;
+top: 80px;
+right: -210px;
+z-index: 5;
+}
+.form-title {
+font-family: "inria", serif;
+font-size: 36px;
+text-shadow: #b8c9b0 1px 1px 1px;
+color: #2E4A3A;
+margin-bottom: 0px;
+position: relative;
+right: -20px;
+top: 30px;
+text-align: center;
+}
+
+form {
+display: flex;
+flex-direction: column;
+gap: 6px;
+padding: 40px;
+}
+
+.form-input {
+position: relative;
+left: 120px;
+width: 70%;
+padding: 12px 16px;
+border: 1px solid #2E4A3A;
+border-radius: 2px;
+background: transparent;
+font-family: "Inria Serif", serif;
+font-size: 13px;
+color: #2E4A3A;
+outline: none;
+}
+
+.form-input::placeholder {
+color: #2E4A3A;
+opacity: 0.6;
+letter-spacing: 0.1em;
+}
+
+.form-textarea {
+height: 100px;
+resize: none;
+}
+
+.form-btn {
+background: #2E4A3A;
+color: #E8C84A;
+font-family: "Inria Serif", serif;
+font-size: 12px;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+padding: 12px 32px;
+border: none;
+border-radius: 2px;
+cursor: pointer;
+align-self: flex-end;
+transition: all 0.3s ease;
+}
+
+.form-btn:hover {
+background: #E8C84A;
+color: #2E4A3A;
+}
+
+.pagetitle {
+    font-size: 40px;
+    font-family: "Monsieur la doulaise", cursive;
+    color: #E8A8B8;
+    text-shadow: #1c251e 3px 2px 1px;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    z-index: 5;
+    left: 20%;
+    bottom: -250px;
+
+}
+.BOX1 {
+    background-color: #2C3B2E;
+    box-shadow: #1c251e 4px 2px 2px ;
+    flex: 1;
+    width : 40%;
+    position: relative;
+    flex-direction: column;
+    padding: 20px; 
+    top: 20px;
+    z-index: 2;
+    left: 20px
+}
+.BOX2 {
+    flex: 1;
+    background-color:#ffdce5;
+    box-shadow: #9e6877 4px 2px 2px;
+    position: relative;
+    padding: 20px;
+    width: 90%;
+    top: -550px;
+    margin-left: 50px;
+}
+
+
+.aboutme {
+color: #1c251e;
+margin-left: 650px;
+text-shadow: #b8c9b0 2px 1px 1px;
+}
+
+
+
+.Work-experience {
+color: #1c251e;
+margin-left: 650px;
+text-shadow: #b8c9b0 2px 1px 1px;
+}
+
+.certifications {
+color: #1c251e;
+margin-left: 650px;
+text-shadow: #b8c9b0 2px 1px 1px;
+}
+
+.label {
+    font-family: "Inria", serif;
+    color: #b8c9b0;
+    text-shadow:#1c251e 2px 2px 1px;
+}
+
+.contact-item{
+
+    color: #c2d2ba;
+    text-shadow: #1c251e 2px 2px 1px;
+}
+
+.contact-item a {
+
+    color:#E8C84A;
+    text-decoration: none;
+}
+
+
+.contact-item a:hover {
+
+color: #e994ac;
+
+
+}
+.HeaderResume {
+
+    color: #c2d2ba;
+    text-shadow: #1c251e 2px 2px 1px;
+}
+
+#Header-Resume {
+position: relative;
+top: 20px;
+    color: #b8c9b0;
+    text-shadow: #1c251e 2px 2px 1px;
+}
+
+.fieldofstudy {
+color: #74a27f;
+position: relative;
+top: -18px;
+
+}
+
+.grad-date {
+color: #43614b;
+position: relative;
+top: -30px;
+}
+
+#educationheader {
+    position: relative;
+    top: 20px;
+}
+#resumename {
+
+color: #E8C84A;
+font-family: "Inria", Serif;
+font-size: 70px;
+text-shadow: #575d3b 2px 2px 2px;
+position: relative;
+top: 10px;
+}
+
+#resumerole {
+
+    color: #eaa4b8;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    position: relative;
+    top:-20px;
+}
+.marquee {
+background-color: #575d3b;
+color: #E8A8B8;
+text-shadow: #965a6c 2px 1px 1px;
+padding: 12px 0;
+overflow: hidden;
+white-space: nowrap;
+letter-spacing: 0.8em;
+text-transform: uppercase;
+font-family: 'Inria', serif;
+font-size: 1rem;
+}
+
+.marquee-inner {
+display: inline-block;
+animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+from { transform: translateX(100vw); }
+to { transform: translateX(-100%); }
+}
+.projects-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 24px;
+padding: 40px;
+max-width: 1100px;
+margin: 0 auto;
+}
+
+.project-card {
+background-color: #4A6B52;
+border: 2px solid #C9A84C;
+text-shadow: #1c251e 2px 1px 1px;
+border-radius: 4px;
+padding: 28px 24px;
+text-decoration: none;
+color: #ffdce5;
+display: flex;
+flex-direction: column;
+gap: 10px;
+transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+transform: translateY(-6px);
+box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.project-card h3 {
+font-family: 'Inria', serif;
+text-transform: uppercase;
+color: #E8C84A;
+font-size: 1.2rem;
+}
+
+.project-card p {
+font-size: 0.85rem;
+opacity: 0.85;
+line-height: 1.6;
+}
+
+.tag {
+font-size: 0.72rem;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+color: #c2d2ba;
+border: 1px solid #C9A84C;
+padding: 3px 10px;
+border-radius: 20px;
+width: fit-content;
+margin-top: auto;
+}
+.extras-scroll {
+display: flex;
+gap: 16px;
+overflow-x: auto;
+padding: 20px 40px 40px;
+max-width: 1100px;
+margin: 0 auto;
+}
+
+.extras-scroll::-webkit-scrollbar { height: 6px; }
+.extras-scroll::-webkit-scrollbar-thumb { background: #C9A84C; border-radius: 2px; }
+
+.project-card-sm {
+background-color: #eaa4b8;
+border: 1px solid #9e6877;
+color: #f5ede8;
+text-transform: uppercase;
+text-decoration: none;
+padding: 16px 24px;
+border-radius: 4px;
+white-space: nowrap;
+font-size: 0.85rem;
+transition: transform 0.2s;
+flex-shrink: 0;
+}
+
+.project-card-sm:hover { transform: translateY(-4px); }
+
+
+#petalCanvas {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+  pointer-events: none; /* so it doesn't block clicks */
+z-index: 999;
+}

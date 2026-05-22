@@ -358,6 +358,14 @@ display: block;
 filter: invert(78%) sepia(55%) saturate(400%) hue-rotate(5deg) brightness(95%);
 }
 
+.socialH-icon { 
+height: 40px;
+width: 40px;
+display: block;
+flex-shrink: 0;
+
+}
+
 .icon-label {
 font-size: 14px;
 letter-spacing: 0.13em;
@@ -370,7 +378,7 @@ color: #bd687b;
     color: #b8c9b0;
 }
 #contactheader {
-    font-size: 60px;
+font-size: 60px;
 color: #E8C84A;
 text-shadow: #bd687b 2px 1px 1px;
 font-family: "monsieur la doulaise", "arial" ,cursive;
@@ -378,6 +386,7 @@ position: relative;
 top: 80px;
 right: -50px;
 z-index: 5;
+white-space: nowrap; 
 }
 .form-title {
 font-family: "inria", serif;
@@ -452,8 +461,8 @@ color: #2E4A3A;
     text-align: center;
     justify-content: center;
     z-index: 5;
-    left: 20%;
-    bottom: -280px;
+    left: 30%;
+    bottom: -300px;
 
 }
 .BOX1 {
@@ -482,7 +491,7 @@ color: #2E4A3A;
 
 .aboutme {
 color: #1c251e;
-margin-left: 675px;
+margin-left: 655px;
 text-shadow: #b8c9b0 2px 1px 1px;
 }
 
@@ -490,13 +499,13 @@ text-shadow: #b8c9b0 2px 1px 1px;
 
 .Work-experience {
 color: #1c251e;
-margin-left: 675px;
+margin-left: 655px;
 text-shadow: #b8c9b0 2px 1px 1px;
 }
 
 .certifications {
 color: #1c251e;
-margin-left: 675px;
+margin-left: 655px;
 text-shadow: #b8c9b0 2px 1px 1px;
 }
 
